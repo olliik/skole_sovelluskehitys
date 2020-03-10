@@ -1,7 +1,7 @@
 <template>
   <div>
     <b-navbar toggleable="lg" type="dark" variant="dark">
-      <b-navbar-brand>myApp</b-navbar-brand>
+      <b-navbar-brand :to="'/'">myApp</b-navbar-brand>
 
       <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -12,7 +12,7 @@
           <template v-if="authenticated">
             <em>{{ user }}</em>
             <b-nav-item-dropdown right>
-              <b-dropdown-item>Profile</b-dropdown-item>
+              <b-dropdown-item :to="'/' + user + '/profile'">Profile</b-dropdown-item>
               <b-dropdown-item v-on:click="onLogout()">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </template>
@@ -27,7 +27,7 @@
 </template>
 
 <script>
-import { authState } from '../main.js';
+import { authState } from '../auth.js';
 export default {
   name: "Navbar",
   props: {
@@ -37,8 +37,9 @@ export default {
   methods: {
     onLogout() {
       authState.logout();
+      this.$router.push({name: 'home'})
     }
-  }
+  },
 };
 </script>
 

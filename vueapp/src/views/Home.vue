@@ -2,7 +2,7 @@
   <div>
     <div class="container">
       <img class="banner-image" alt="Banner image" :src="require(`@/assets/images/${imgIndex}.jpg`)" />
-      <HelloWorld msg="Welcome to Your Vue.js App" />
+      <HelloWorld />
     </div>
   </div>
 </template>

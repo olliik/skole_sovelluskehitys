@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="container">
     <Navbar :user="username" :authenticated="authenticated" />
     <router-view></router-view>
   </div>
@@ -10,7 +10,7 @@
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-vue/dist/bootstrap-vue.css";
 import Navbar from './components/Navbar.vue';
-import { authState } from './main.js';
+import { authState } from './auth.js';
 
 export default {
   name: "App",
@@ -31,5 +31,6 @@ export default {
 <style>
 #app {
   text-align: center;
+  color: #00bc8c
 }
 </style>

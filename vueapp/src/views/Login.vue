@@ -24,11 +24,12 @@
         </div>
       </form>
     </div>
+    <div class="login-alert">Tarkista kayttajatunnus tai salasana!</div>
   </div>
 </template>
 
 <script>
-//import { authState } from '../main.js';
+import { authState } from '../auth.js';
 import authService from "../helpers/authService";
 
 export default {
@@ -48,7 +49,13 @@ export default {
         password: this.input.password
       };
       const res = await authService.Login(data);
-      console.log("loginview: ", res);
+      console.log("loginview res: ", res);
+      if (res.status === 200) {
+        console.log(':)')
+        authState.login(res.data)
+        this.$router.push({name: 'home'})
+      }
+      // TODO: else notify user about failed login
     }
   }
 };
@@ -63,5 +70,8 @@ export default {
   width: 50vh;
   display: inline-block;
   margin-top: 10vh;
+}
+.login-alert {
+  visibility: hidden;
 }
 </style>

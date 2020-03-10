@@ -17,7 +17,7 @@ const movieSchema = new Schema({
         type: String,
     },
     Runtime: {
-        type: Number,
+        type: String,
     },
     Genre: {
         type: String,
@@ -47,7 +47,8 @@ const movieSchema = new Schema({
         type: String,
     },
     Ratings: {
-        type: [String],
+        Source: String,
+        Value: String,
     },
     Metascore: {
         type: Number,
@@ -56,7 +57,7 @@ const movieSchema = new Schema({
         type: Number,
     },
     imdbVotes: {
-        type: Number,
+        type: String,
     },
     imdbID: {
         type: String,
@@ -77,7 +78,7 @@ const movieSchema = new Schema({
         type: String,
     },
     Response: {
-        type: Boolean,
+        type: String,
     }
 }, { collection: 'Movie' });
 

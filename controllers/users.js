@@ -1,6 +1,8 @@
 const jwt = require('jsonwebtoken');
 const userModel = require('../models/userModel');
 
+
+
 generateToken = user => {
     return jwt.sign({
         algorithm: "RS256",
@@ -44,9 +46,41 @@ module.exports = {
         }
         return res.status(400).json( {error: 'Wrong username or password!' });
     },
+
     Logout: async (req, res, next) => {
         req.session.destroy((err) => {
             if (err) return console.log(err);
         })
+    },
+
+    getUser: async (req, res, next) => {
+        try {
+            const user = await userModel.findById(req.params.userID)
+            res.status(200).json(user);
+        } catch (err) {
+            res.json({ message: err })
+        }
+    },
+
+    getAll: async (req, res, next) => {
+        try {
+            const users = await userModel.find();
+            res.status(200).json(users);
+        } catch (err) {
+            res.json({ message: err })
+        }
+    },
+
+    updateUserData: async (req, res, next) => {
+        try {
+            const userData = req.body;
+            if( userData.avatar != '' && typeof req.file !== 'undefined' ) {
+                userData.avatar = req.file.buffer;
+            }
+            await userModel.findByIdAndUpdate(req.params.userID, userData)
+            return res.status(200).json({ message: "User data updated succesfully! "})
+        } catch (err) {
+            res.json({ error: err })
+        }
     },
 }

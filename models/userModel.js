@@ -25,6 +25,10 @@ const userSchema = new Schema({
         type: Date,
         required: true,
         default: Date.now(),
+    },
+    avatar: {
+        data: Buffer,
+        contentType: String,
     }
 });
 
