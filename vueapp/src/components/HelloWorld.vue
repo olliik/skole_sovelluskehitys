@@ -2,12 +2,12 @@
   <div class="hello">
 
     <div v-if="isAuth">
-      <h1>Welcome, {{this.username}}</h1>
+      <h1>Welcome, {{this.username}} !</h1>
     </div>
 
     <div v-else>
       <h1>Welcome!</h1>
-      <h4>Start reviewing movies and sharing your watchlist by singing up or logging in.</h4>
+      <h4>Start reviewing movies and sharing your watchlist by signing up or logging in.</h4>
     </div>
 
     </div>

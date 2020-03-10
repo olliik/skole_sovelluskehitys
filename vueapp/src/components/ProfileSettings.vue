@@ -22,7 +22,8 @@
           placeholder="Choose a file or drop it here..."
           drop-placeholder="Drop file here..."
         ></b-form-file>
-        <b-img
+        <b-img v-if="avatar"
+          class="profile-image"
           v-bind="avatar"
           rounded="circle"
           alt="Circle image"
@@ -50,7 +51,7 @@ export default {
         profileDescription: null
       },
       show: true,
-      avatar: null
+      avatar: authService.avatar
     };
   },
   created() {
@@ -102,5 +103,9 @@ img {
 .form-button {
   margin: 8px;
   width: 180px;
+}
+.profile-image {
+  width: 200px;
+  height: 150px;
 }
 </style>

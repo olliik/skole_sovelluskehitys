@@ -24,7 +24,7 @@
         </div>
       </form>
     </div>
-    <div class="login-alert">Tarkista kayttajatunnus tai salasana!</div>
+    <div class="login-alert">Check your username/password!</div>
   </div>
 </template>
 

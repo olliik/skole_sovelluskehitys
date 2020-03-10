@@ -6,6 +6,7 @@ export const authState = new Vue({
         isAuthenticated: false,
         id: null,
         user: null,
+        avatar: null,
       }
     },
     methods: {
@@ -13,12 +14,14 @@ export const authState = new Vue({
         this.isAuthenticated = true;
         this.id = data._id;
         this.user = data.username;
+        this.avatar = data.avatar;
       },
   
       logout() {
         this.isAuthenticated = false;
         this.id = null;
         this.user = null;
+        this.avatar = null;
       }
     },
   

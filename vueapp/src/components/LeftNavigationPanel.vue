@@ -11,7 +11,6 @@
 </template>
 
 <script>
-//import { authState } from "../auth.js";
 
 export default {
   name: "LeftNavigationPanel",

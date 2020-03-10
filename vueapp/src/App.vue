@@ -1,6 +1,6 @@
 <template>
   <div id="app" class="container">
-    <Navbar :user="username" :authenticated="authenticated" />
+    <Navbar :user="username" :authenticated="authenticated" :avatar="avatar" />
     <router-view></router-view>
   </div>
 </template>
@@ -20,6 +20,9 @@ export default {
     },
     username() {
       return authState.user;
+    },
+    avatar() {
+      return authState.avatar;
     }
   },
   components: {
