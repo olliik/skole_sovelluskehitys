@@ -15,7 +15,7 @@
 <script>
 import { authState } from '../auth.js';
 export default {
-  name: 'LatestReviewsCOntainer',
+  name: 'LatestReviewsContainer',
   data() {
     return {
       isAuth: authState.isAuthenticated,

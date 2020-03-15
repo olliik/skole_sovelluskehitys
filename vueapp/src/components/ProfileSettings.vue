@@ -32,7 +32,6 @@
       </b-form-group>
 
       <b-button type="submit" pill variant="primary" class="form-button">Save</b-button>
-      <b-button type="reset" pill variant="danger" class="form-button">Reset (ei vielä toimintoa)</b-button>
     </b-form>
   </div>
 </template>

@@ -5,7 +5,7 @@ const movieController = require('../controllers/movies');
 
 router.post('/add', movieController.AddMovie);
 
-router.post('/delete/:movieId', movieController.Delete);
+router.delete('/delete/:movieId', movieController.Delete);
 
 router.get('/:movieId', movieController.getOne);
 
