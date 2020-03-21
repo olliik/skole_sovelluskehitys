@@ -4,7 +4,7 @@
       <b-card no-body class="overflow-hidden">
         <b-row no-gutters>
           <b-col md="4">
-            <b-card-img :src="data.Poster" class="rounded-0"></b-card-img>
+            <b-card-img :src="data.Poster"></b-card-img>
           </b-col>
           <b-col md="8">
             <b-card-body>
@@ -16,7 +16,9 @@
               <b-card-text>{{data.Writer}}</b-card-text>
               <div class="text-muted">IMDB: {{data.imdbRating}}/10 - Metascore: {{data.Metascore}}/100</div>
               TODO: add to watchlist
-              <b-icon icon="tv" style="width: 30px; height: 30px;"></b-icon>
+              <div v-if="authenticated">
+                <b-icon icon="tv" style="width: 30px; height: 30px;"></b-icon>
+              </div>
             </b-card-body>
           </b-col>
         </b-row>
@@ -26,6 +28,8 @@
 </template>
 
 <script>
+import {authState} from '../auth.js';
+
 export default {
   name: "MovieListItem",
   data() {
@@ -33,6 +37,11 @@ export default {
       movies: null,
       loading: true
     };
+  },
+  computed: {
+    authenticated() {
+      return authState.isAuthenticated;
+    },
   },
   props: {
     data: Object

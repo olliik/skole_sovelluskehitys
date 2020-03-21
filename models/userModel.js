@@ -29,9 +29,15 @@ const userSchema = new Schema({
     avatar: {
         data: Buffer,
         contentType: String,
-    }
+    },
+    movieReviews: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'movieReview',
+        required: true,
+    }],
 });
 
 const User = mongoose.model('user', userSchema);
+
 
 module.exports = User;

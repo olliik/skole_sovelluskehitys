@@ -80,10 +80,10 @@ const movieSchema = new Schema({
     Response: {
         type: String,
     }
-}, { collection: 'Movie' });
+}, {collection: 'Movie'});
 
 
 
-const movie = mongoose.model('movies', movieSchema);
+const movie = mongoose.model('Movie', movieSchema);
 
 module.exports = movie;

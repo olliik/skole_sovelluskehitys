@@ -33,7 +33,7 @@ export default {
     return {
       items: [
         { url: "/" + authState.user + "/profile", text: "Profile" },
-        { url: "/" + authState.user + "/watchlist", text: "Watchlist" },
+        { url: "/" + authState.user + "/profile/watchlist", text: "Watchlist" },
         { url: "/" + authState.user + "/profile/settings", text: "Settings" },
       ]
     }

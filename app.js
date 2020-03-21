@@ -33,10 +33,12 @@ mongoose.connect(process.env.DB_CONNECTION, {
 // Models
 require('./models/movieModel');
 require('./models/userModel');
+require('./models/moviereviewModel');
 
 // Routes
 app.use('/api/movies', require('./routes/movies'));
 app.use('/api/users', require('./routes/users'));
+app.use('/api/reviews', require('./routes/reviews'));
 
 
 app.listen(process.env.PORT_DEV, () => {

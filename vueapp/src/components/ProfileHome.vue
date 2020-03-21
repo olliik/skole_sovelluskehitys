@@ -1,7 +1,10 @@
 <template>
   <div>
-    <p>MIKSI VITUSSA TÄMÄ EI TOIMI?!</p>
+    <p>MIKSI VITUSSA TÄMÄ ELEMENTTI EI TOIMI?!</p>
+
+    
     <LatestReviewsContainer />
+    
   </div>
 </template>
 
