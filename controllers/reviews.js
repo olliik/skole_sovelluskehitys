@@ -30,7 +30,9 @@ module.exports = {
     },
     getAll: async (req, res, next) => {
         try {
-            const reviews = await reviewModel.find();
+            const reviews = await reviewModel.find()
+            .populate('movie')
+            .exec();
             res.status(200).json(reviews);
         } catch (err) {
             res.json({ message: err })
@@ -39,7 +41,9 @@ module.exports = {
     getAllByUser: async (req, res, next) => {
         try {
             //const reviews = await reviewModel.find({createdBy: req.params.userId});
-            const reviews = await reviewModel.find({createdBy: req.params.username });
+            const reviews = await reviewModel.find({createdBy: req.params.userId })
+            .populate('movie')
+            .exec();
             res.status(200).json(reviews);
         } catch (err) {
             res.json({ message: err })

@@ -18,7 +18,7 @@ app.use(express.static(path.join(__dirname, '/public')));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
-    resave: false,
+    resave: true,
     saveUninitialized: true,
     cookie: { secure: true, maxAge: 1000000 }
   }))
@@ -34,11 +34,13 @@ mongoose.connect(process.env.DB_CONNECTION, {
 require('./models/movieModel');
 require('./models/userModel');
 require('./models/moviereviewModel');
+require('./models/watchlistModel');
 
 // Routes
 app.use('/api/movies', require('./routes/movies'));
 app.use('/api/users', require('./routes/users'));
 app.use('/api/reviews', require('./routes/reviews'));
+app.use('/api/watchlist', require('./routes/watchlist'));
 
 
 app.listen(process.env.PORT_DEV, () => {

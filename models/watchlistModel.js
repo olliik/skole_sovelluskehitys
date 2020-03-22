@@ -1,8 +1,8 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const movieReviewSchema = new Schema({
-    createdAt: {
+const watchlistSchema = new Schema({
+    addDate: {
         type: Date,
         required: true,
         default: Date.now(),
@@ -10,27 +10,21 @@ const movieReviewSchema = new Schema({
     createdBy: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'users',
-        required: true,
+        required:true,
     },
     movie: {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'Movies',
         required: true,
     },
-    review: {
-        type: String,
-    },
-    rating: {
-        type: Number,
+    completed: {
+        type: Boolean,
         required: true,
+    },
+    notes: {
+        type: String,
     }
 });
-const movieReview = mongoose.model('movieReviews', movieReviewSchema);
+const watchlistItem = mongoose.model('watchlistItem', watchlistSchema);
 
-movieReview.findOne({})
-.populate('movie')
-.exec((err, movie) => {
-    console.log(movie); 
-})
-
-module.exports = movieReview;
+module.exports = watchlistItem;

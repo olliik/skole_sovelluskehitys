@@ -32,12 +32,17 @@ const userSchema = new Schema({
     },
     movieReviews: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'movieReview',
+        ref: 'movieReviews',
         required: true,
     }],
+    watchlist: [{
+        type: mongoose.Schema.ObjectId,
+        ref: 'watchlistItem',
+        required: true,
+    }]
 });
 
-const User = mongoose.model('user', userSchema);
+const User = mongoose.model('users', userSchema);
 
 
 module.exports = User;

@@ -7,7 +7,6 @@
       <b-collapse id="nav-collapse" is-nav>
         <b-navbar-nav>
         <b-nav-item :to="'/movies'">Movies</b-nav-item>
-        <b-nav-item href="#">Reviews</b-nav-item>
       </b-navbar-nav>
         <!-- Right aligned nav items -->
         <b-navbar-nav class="ml-auto">
@@ -23,7 +22,6 @@
             </div>
             <b-nav-item-dropdown right>
               <b-dropdown-item :to="'/' + user + '/profile'">Profile</b-dropdown-item>
-              <b-dropdown-item :to="'/' + user + '/watchlist'">Watchlist</b-dropdown-item>
               <b-dropdown-item v-on:click="onLogout()">Sign Out</b-dropdown-item>
             </b-nav-item-dropdown>
           </template>

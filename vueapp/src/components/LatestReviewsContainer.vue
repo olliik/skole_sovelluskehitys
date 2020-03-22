@@ -2,7 +2,11 @@
   <div>
       <h3>Your latest movie reviews</h3> 
     <div v-if="this.reviews.length > 0">
-      <ReviewItem />
+      <div v-for="(item, index) in this.reviews" :key="index">
+          <ReviewItem
+            :data="item"
+           />
+      </div>
     </div>
 
     <div v-else>
@@ -23,13 +27,14 @@ export default {
   data() {
     return {
       isAuth: authState.isAuthenticated,
-      username: authState.user,
+      id: authState.id,
       reviews: null,
       loading: true,
     }
   },
   async mounted () {
-    let data = await reviewService.getUserReviews(this.username);
+    console.log(this.id)
+    let data = await reviewService.getUserReviews(this.id);
     this.reviews = data.data;
     this.loading = false;
     console.log(this.reviews);

@@ -3,14 +3,14 @@ import axios from 'axios';
 const URL = 'http://localhost:3000';
 
 export default {
-    getUserReviews: async (username) => {
-        let res = await axios.get(URL + '/api/reviews/user/' + username);
+    getUserReviews: async (id) => {
+        let res = await axios.get(URL + '/api/reviews/user/' + id);
         return res;
     },
-    /*
-    PostReview: async (credentials) => {
-      let res = await axios.post(URL + '/api/users/login', credentials);
+    PostReview: async (data) => {
+      console.log(data);
+      let res = await axios.post(URL + '/api/reviews/add', data);
+      console.log(res)
       return res;
     }
-    */
 }

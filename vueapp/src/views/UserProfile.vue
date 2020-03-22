@@ -17,22 +17,13 @@
 import { authState } from "../auth.js";
 import LeftNavPanel from '../components/LeftNavigationPanel.vue';
 
-// TODO: URL:n pitäs kans korjata authStaten sijasta props.username
-/*
-const items = [
-        { url: "/" + authState.user + "/profile", text: "Profile" },
-        { url: "/" + authState.user + "/watchlist", text: "Watchlist" },
-        { url: "/" + authState.user + "/profile/settings", text: "Settings" },
-      ]
-      */
-//if (authState.user == props.username) items.push({ url: "/" + authState.user + "/profile/settings", text: "Settings" })
-
 export default {
   name: "userProfile",
   data() {
     return {
       items: [
         { url: "/" + authState.user + "/profile", text: "Profile" },
+        { url: "/" + authState.user + "/profile/reviews", text: "Reviews" },
         { url: "/" + authState.user + "/profile/watchlist", text: "Watchlist" },
         { url: "/" + authState.user + "/profile/settings", text: "Settings" },
       ]

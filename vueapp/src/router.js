@@ -7,8 +7,9 @@ import LoginComponent from './views/Login.vue';
 import RegisterComponent from "./views/Register.vue";
 import registerSuccesfulComponents from "./views/RegisterSuccesful.vue";
 import UserProfileComponent from './views/UserProfile.vue';
-import UserProfileHome from './components/LatestReviewsContainer.vue';
+import UserProfileHome from './components/ProfileHome.vue';
 import ProfileSettings from './components/ProfileSettings.vue';
+import ProfileReviews from './components/ProfileReviews.vue';
 
 
 Vue.use(VueRouter);
@@ -22,6 +23,7 @@ const routes = [
     { path: "/:username/profile/", name: "userProfile", component: UserProfileComponent,
       children: [
         { path: "", name: "userHome", component: UserProfileHome },
+        { path: "reviews", name: "userReviews", component: ProfileReviews },
         { path: "settings", name: "userSettings", component: ProfileSettings },
       ]
     }

@@ -42,6 +42,8 @@ module.exports = {
             }
             req.session.user_id = foundUser._id;
             req.session.username = foundUser.username;
+            req.session.save();
+            console.log('req.session: ', req.session);
             return res.status(200).json(foundUser)
         }
         return res.status(400).json( {error: 'Wrong username or password!' });
