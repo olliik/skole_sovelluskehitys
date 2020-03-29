@@ -38,7 +38,7 @@ mongoose.connect(db || process.env.DB_CONNECTION, {
 // Models
 require('./models/movieModel');
 require('./models/userModel');
-require('./models/moviereviewModel');
+require('./models/movieReviewModel');
 require('./models/watchlistModel');
 
 // Routes
