@@ -26,7 +26,9 @@ app.use(session({
     cookie: { secure: true, maxAge: 1000000 }
   }))
 
-mongoose.connect(process.env.DB_CONNECTION, {
+const db = process.env.MONGODB_URL;
+
+mongoose.connect(db || process.env.DB_CONNECTION, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 }, () => {
