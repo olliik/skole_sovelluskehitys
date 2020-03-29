@@ -27,10 +27,5 @@ const movieReviewSchema = new Schema({
 });
 const movieReview = mongoose.model('movieReviews', movieReviewSchema);
 
-movieReview.findOne({})
-.populate('movie')
-.exec((err, movie) => {
-    console.log(movie); 
-})
 
 module.exports = movieReview;

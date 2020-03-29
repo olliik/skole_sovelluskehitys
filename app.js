@@ -10,7 +10,8 @@ require('dotenv').config()
 const app = express();
 app.use(cors());
 
-const PORT = process.env.ENV === 'PROD' ? process.env.PORT : process.env.PORT_DEV || 8001;
+//const PORT = process.env.ENV === 'PROD' ? process.env.PORT : process.env.PORT_DEV || 8001;
+const PORT = process.env.PORT || process.env.PORT_DEV ;
 var serveStatic = require('serve-static');
 
 app.use(logger('dev'));
