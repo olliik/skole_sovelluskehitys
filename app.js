@@ -11,12 +11,13 @@ const app = express();
 app.use(cors());
 
 const PORT = process.env.ENV === 'PROD' ? process.env.PORT : process.env.PORT_DEV || 8001;
+var serveStatic = require('serve-static');
 
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, '/public')));
+app.use(serveStatic(__dirname + "/vueapp/dist"));
 
 app.use(session({
     secret: process.env.SESSION_SECRET,
