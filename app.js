@@ -8,7 +8,9 @@ const cors = require('cors');
 require('dotenv').config()
 
 const app = express();
-app.use(cors())
+app.use(cors());
+
+const PORT = process.env.ENV === 'PROD' ? process.env.PORT : process.env.PORT_DEV || 8001;
 
 app.use(logger('dev'));
 app.use(express.json());
@@ -43,7 +45,7 @@ app.use('/api/reviews', require('./routes/reviews'));
 app.use('/api/watchlist', require('./routes/watchlist'));
 
 
-app.listen(process.env.PORT_DEV, () => {
-    console.log('Server listening on PORT: ', process.env.PORT_DEV);
+app.listen(PORT, () => {
+    console.log('Server listening on PORT: ', PORT);
 });
 module.exports = app;

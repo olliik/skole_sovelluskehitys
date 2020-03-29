@@ -1,7 +1,6 @@
 {
   "name": "myapp",
-  "version": "0.0.0",
-  "private": true,
+  "version": "0.0.0", 
   "main": "app.js",
   "scripts": {
     "client": "npm run serve --prefix vueapp",
@@ -21,6 +20,9 @@
     "morgan": "~1.9.1",
     "multer": "^1.4.2",
     "vue-router": "^3.1.5"
+  },
+  "engines": {
+    "node": "12.14.1"
   },
   "devDependencies": {
     "concurrently": "^5.1.0",
