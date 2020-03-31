@@ -24,7 +24,6 @@ export default {
       items: [
         { url: "/" + authState.user + "/profile", text: "Profile" },
         { url: "/" + authState.user + "/profile/reviews", text: "Reviews" },
-        { url: "/" + authState.user + "/profile/watchlist", text: "Watchlist" },
         { url: "/" + authState.user + "/profile/settings", text: "Settings" },
       ]
     }
