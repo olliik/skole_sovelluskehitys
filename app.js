@@ -48,6 +48,10 @@ app.use('/api/users', require('./routes/users'));
 app.use('/api/reviews', require('./routes/reviews'));
 app.use('/api/watchlist', require('./routes/watchlist'));
 
+if(process.env.NODE_ENV === 'production') {
+  
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + '/vueapp/dist/index.html'));
+}
 
 app.listen(PORT, () => {
     console.log('Server listening on PORT: ', PORT);
