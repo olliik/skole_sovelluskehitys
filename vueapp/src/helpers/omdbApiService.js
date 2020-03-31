@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 // format: http://www.omdbapi.com/?i=[TITLE]&apikey=[KEY]
-const BASEURL = `http://www.omdbapi.com/?apikey=${process.env.VUE_APP_OMDbAPI_KEY}`;
+const BASEURL = `https://www.omdbapi.com/?apikey=${process.env.VUE_APP_OMDbAPI_KEY}`;
 
 
 export default {
