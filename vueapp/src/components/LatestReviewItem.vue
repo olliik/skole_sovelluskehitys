@@ -11,7 +11,6 @@
       <p>Rating: {{data.rating}}/10</p>
     </div>
 
-    <!-- b-[Optional: add media children here for nesting] -->
   </b-media>
   <hr />
 </div>

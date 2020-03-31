@@ -15,7 +15,7 @@
               <b-card-sub-title class="mb-2">Writer(s)</b-card-sub-title>
               <b-card-text>{{data.Writer}}</b-card-text>
               <div class="text-muted">IMDB: {{data.imdbRating}}/10 - Metascore: {{data.Metascore}}/100</div>
-              TODO: add to watchlist
+              
               
               <div v-if="authenticated">
                 <b-icon icon="tv" style="width: 30px; height: 30px;" @click="handleNewWatchlistItem"></b-icon>
