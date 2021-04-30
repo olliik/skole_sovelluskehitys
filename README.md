@@ -1,7 +1,6 @@
 # skole_sovelluskehitys
 School project, server+vue client / MERN-stack
 
-https://leffaapp-skole.herokuapp.com/
 Verkko-ohjelmointi ja sovelluskehitys kurssien harjoitustyö.
 
 # Verkko-ohelmointi - backend
